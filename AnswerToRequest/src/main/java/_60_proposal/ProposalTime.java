@@ -45,10 +45,8 @@ public class ProposalTime {
     }
 }
 // TODO: Stage2
-
 // list of dates for availableTime;
-////price
-//private double proposalPrice;
-//
+//    //price
+//    private double proposalPrice;
 //    //score
 //    private int score;

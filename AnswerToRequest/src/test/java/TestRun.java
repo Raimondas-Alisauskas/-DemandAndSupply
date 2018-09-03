@@ -19,11 +19,10 @@ public class TestRun {
 
         DASData<Request> requestData = RequestsDBFactory.getDASInstance();
         DASData<Producer> producersData = ProducersDBFactory.getDbInstance();
-//        DASData<Proposal> proposalsData = ProposalsDBFactory.getDbInstance();
         DASData<Answer> answersData = AnswersDBFactory.getDbInstance();
 
-        test.java.TestDataPopulator testDataPopulator = new test.java.TestDataPopulator();
-//        testDataPopulator.putProducerData(testDataPopulator.producersData);
+        test.java.TestDataPopulator testDataPopulator;
+        testDataPopulator = new test.java.TestDataPopulator();
 
         App app = new App(requestData, producersData, answersData);
         app.runApp();
@@ -47,8 +46,6 @@ public class TestRun {
             ProposalTime proposalTime = proposalsInAnswer.get(i).getProposalTime();
             printVariables(proposalTime);
 
-
-
             System.out.println();
             System.out.println("Producer in Proposal " + (i + 1) + ":" );
             String producerId = proposalsInAnswer.get(i).getProducerId();
@@ -61,10 +58,6 @@ public class TestRun {
             printVariables(producerTime);
 
         }
-
-
-
-
 
     }
 

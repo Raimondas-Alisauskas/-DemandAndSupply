@@ -60,12 +60,7 @@ public class Request {
 //    //priorities
 //    private double prioritiesTime; //
 //    private double prioritiesPrice;  //
-//
-//        maxPrice = Double.parseDouble(requestInput.getMaxPrice());
-//
-//        prioritiesTime = Double.parseDouble(requestInput.getTimePriority());
-//
-//        prioritiesPrice = Double.parseDouble(requestInput.getPricePriority());
+
 
 
 

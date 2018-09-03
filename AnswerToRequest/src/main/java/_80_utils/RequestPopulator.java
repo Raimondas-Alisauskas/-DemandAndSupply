@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeParseException;
 
-public class RequestFiller {
+public class RequestPopulator {
 
     public Request fillRequest(RequestInput requestInput, Request request) {
         try {

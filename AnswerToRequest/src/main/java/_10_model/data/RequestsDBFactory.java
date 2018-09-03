@@ -15,16 +15,16 @@ public class RequestsDBFactory {
         return dbInstance;
     }
 
-    private static DASData<Request>  creteDbInstance(){
+    private static DASData<Request>  creteDbInstance() {
         //config mode
         int mode = 0;//For static data mode
 
-       switch (mode){
-           case 0:
-               return new RequestsStaticDASData();
-           default:
-               break;
+        switch (mode) {
+            case 0:
+                return new RequestsStaticDASData();
+            default:
+                break;
         }
-        throw new RuntimeException("Not existing mode type"); // TODO: 18.8.22 Make test
+        throw new RuntimeException("Not existing mode type");
     }
 }

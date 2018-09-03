@@ -4,7 +4,7 @@ import _30_producer.Producer;
 import _50_request.Request;
 import _60_proposal.Proposal;
 
-public class ProposalFiller {
+public class ProposalPopulator {
 
     public Proposal fillProposal(Proposal proposal, Request request, Producer producer) {
         proposal.setRequestId(request.getRequestId());

@@ -13,7 +13,7 @@ public class RequestInput {
 
 
     public RequestInput() {
-        clientId = "ClName";
+        clientId = "Client";
         maxHeightMM = "100";
         maxLengthMM = "100";
         maxWidthMM = "50";
@@ -72,7 +72,7 @@ public class RequestInput {
     }
 }
 
-// TODO: 18.8.18 Stage 2
+// TODO: Stage2
 //    //price
 //    private String maxPrice;
 //

@@ -25,6 +25,6 @@ public class ProducersDBFactory {
            default:
                break;
         }
-        throw new RuntimeException("Not existing mode type"); // TODO: 18.8.22 Make test
+        throw new RuntimeException("Not existing mode type");
     }
 }
