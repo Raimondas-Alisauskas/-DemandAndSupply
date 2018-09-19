@@ -11,8 +11,10 @@ Application will be developed in stages.
 #### Stage 1: 
 - [x] Scope and Time requirements will be met in the  Answer. Done.
 
+Current version have to be run with **TestRun** in the test folder.
+
 - Composition vs inheritance application structure has been considered.
-Composition structure has been choosen, but after some readings it will be changed to inheritance based structure. Work is ongoing at this stage.
+Composition structure has been choosen, but after some readings it will be changed to inheritance based structure. **Work is ongoing** at this stage.
 
 #### Stage 2: 
 - [ ] Price and Priority requirements will be met.
