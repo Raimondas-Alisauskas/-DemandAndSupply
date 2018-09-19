@@ -7,9 +7,10 @@ import _30_producer.Producer;
 import _50_request.Request;
 import _60_proposal.Proposal;
 import _70_answer.Answer;
+import _80_utils.RequestPopulator;
 import _80_utils.scopeUtils.ProposalScopeEvaluator;
 import _80_utils.timeUtils.ProposalTimeEvaluator;
-import _80_utils.RequestFiller;
+
 
 import java.util.List;
 
@@ -44,8 +45,8 @@ class App {
         Request request = new Request();
 
         //fill the Request
-        RequestFiller requestFiller = new RequestFiller();
-        request = requestFiller.fillRequest(requestInput, request);
+        RequestPopulator requestPopulator = new RequestPopulator();
+        request = requestPopulator.fillRequest(requestInput, request);
 
         //Put the Request in to requestsData
         requestsData.getData().add(request);

@@ -3,7 +3,7 @@ package _80_utils.timeUtils;
 import _30_producer.Producer;
 import _60_proposal.Proposal;
 import _50_request.Request;
-import _80_utils.ProposalFiller;
+import _80_utils.ProposalPopulator;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -19,7 +19,7 @@ public class ProposalTimeEvaluator {
     private Producer producer;
     private Request request;
     private List<Proposal> timeFitProposalsList;
-    private ProposalFiller proposalFiller;
+    private ProposalPopulator proposalPopulator;
     private LocalDateTime earlyFinishDate;
     private boolean productionIsOnTime;
 
@@ -29,7 +29,7 @@ public class ProposalTimeEvaluator {
         productionDurationCalculator = new ProductionDurationCalculator();
         producerAvailabilityCalculator = new ProducerAvailabilityCalculator();
         timeFitProposalsList = new ArrayList<>();
-        proposalFiller = new ProposalFiller();
+        proposalPopulator = new ProposalPopulator();
 
         for (int i = 0; i < producersList.size(); i++) {
 
@@ -77,7 +77,7 @@ public class ProposalTimeEvaluator {
 
         //fill ProposalTime
         proposal.getProposalTime().setEarlyFinish(earlyFinishDate);
-        proposal = proposalFiller.fillProposal(proposal, request, producer);
+        proposal = proposalPopulator.fillProposal(proposal, request, producer);
 
         //put Proposal to timeFitProposalsList list
         timeFitProposalsList.add(proposal);
