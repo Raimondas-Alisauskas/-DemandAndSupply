@@ -9,7 +9,7 @@ public class ProductionDurationCalculator {
 
     public Duration calcProductionDuration(Request request, Producer producer) {
 
-        long volumeUnit = request.getRequestScope().getVolumeCM3();
+        long volumeUnit = request.getRequestTime().getVolumeCM3();
         long processingSpeedUnitpH = producer.getProducerScope().getProcessingSpeedCM3pH();
         Duration preparationTime = producer.getProducerTime().getProgrammingTimeH();
         Duration deliveringTime = producer.getProducerTime().getDeliveringTimeH();

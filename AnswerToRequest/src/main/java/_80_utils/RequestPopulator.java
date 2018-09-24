@@ -21,8 +21,8 @@ public class RequestPopulator {
             long volumeCM3 = Long.valueOf(requestInput.getVolumeCM3());
             LocalDateTime deadline = (LocalDateTime.of(LocalDate.parse(requestInput.getDeadline()), LocalTime.MIDNIGHT));
 
-            request.setRequestScope(new RequestScope(maxHeightMM, maxLengthMM, maxWidthMM, volumeCM3));
-            request.setRequestTime(new RequestTime(deadline));
+            request.setRequestScope(new RequestScope(maxHeightMM, maxLengthMM, maxWidthMM));
+            request.setRequestTime(new RequestTime(volumeCM3, deadline));
 
         } catch (NumberFormatException e) {
             System.out.println("Please do not leave empty requestInput data");

@@ -4,11 +4,12 @@ public class RequestInput {
 
     //id
     private String clientId;
+    //scope
     private String maxHeightMM;
     private String maxLengthMM;
     private String maxWidthMM;
-    private String volumeCM3;
     //time
+    private String volumeCM3;
     private String deadline;
 
 
