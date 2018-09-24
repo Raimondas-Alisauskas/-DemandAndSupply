@@ -7,14 +7,10 @@ public class Request {
     private String requestId;
     private String clientId;
 
-    private RequestScope requestScope;
-    private RequestTime requestTime;
-
     //empty Request
     public Request() {
         this.requestId = new IdGenerator().generateIdKey("Rkw ");
     }
-
 
 
     //getset
@@ -34,21 +30,6 @@ public class Request {
         this.clientId = clientId;
     }
 
-    public RequestScope getRequestScope() {
-        return requestScope;
-    }
-
-    public void setRequestScope(RequestScope requestScope) {
-        this.requestScope = requestScope;
-    }
-
-    public RequestTime getRequestTime() {
-        return requestTime;
-    }
-
-    public void setRequestTime(RequestTime requestTime) {
-        this.requestTime = requestTime;
-    }
 }
 
 

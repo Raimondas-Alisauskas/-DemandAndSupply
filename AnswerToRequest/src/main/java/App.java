@@ -5,6 +5,8 @@ import _10_model.data.RequestsDBFactory;
 import _10_model.input.RequestInput;
 import _30_producer.Producer;
 import _50_request.Request;
+import _50_request.RequestScope;
+import _50_request.RequestScopeTime;
 import _60_proposal.Proposal;
 import _70_answer.Answer;
 import _80_utils.RequestPopulator;
@@ -42,11 +44,12 @@ class App {
         RequestInput requestInput = new RequestInput();
 
         //Create empty Request
-        Request request = new Request();
+        RequestScopeTime request = new RequestScopeTime();
 
         //fill the Request
         RequestPopulator requestPopulator = new RequestPopulator();
-        request = requestPopulator.fillRequest(requestInput, request);
+        request = null;
+//                requestPopulator.fillRequest(requestInput, request);
 
         //Put the Request in to requestsData
         requestsData.getData().add(request);
@@ -56,16 +59,16 @@ class App {
         List<Producer> scopeFitProducers = proposalScopeEvaluator.getScopeFitProducers(request, producersData);
 
 
-        //Get timeFitProposals list which meets Request's time requirements
-        ProposalTimeEvaluator proposalTimeEvaluator = new ProposalTimeEvaluator();
-        List<Proposal> timeFitProposals = proposalTimeEvaluator.getTimeFitProposalsList(request, scopeFitProducers);
-
-        //Put timeFitProposals to Answer
-        Answer answer = new Answer();
-        answer.setProposalsInAnswer(timeFitProposals);
-
-        //Put Answer to AnswersData
-        answersData.getData().add(answer);
+//        //Get timeFitProposals list which meets Request's time requirements
+//        ProposalTimeEvaluator proposalTimeEvaluator = new ProposalTimeEvaluator();
+//        List<Proposal> timeFitProposals = proposalTimeEvaluator.getTimeFitProposalsList(request, scopeFitProducers);
+//
+//        //Put timeFitProposals to Answer
+//        Answer answer = new Answer();
+//        answer.setProposalsInAnswer(timeFitProposals);
+//
+//        //Put Answer to AnswersData
+//        answersData.getData().add(answer);
 
 
     }

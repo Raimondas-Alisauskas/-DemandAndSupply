@@ -1,15 +1,17 @@
 package _50_request;
 
-public class RequestScope {
+public class RequestScope extends Request{
 
     private long maxHeightMM;
     private long maxLengthMM;
     private long maxWidthMM;
 
-
+    public RequestScope() {
+    }
 
     //for calculations
     public RequestScope(long maxHeightMM, long maxLengthMM, long maxWidthMM) {
+        super();
         this.maxHeightMM = maxHeightMM;
         this.maxLengthMM = maxLengthMM;
         this.maxWidthMM = maxWidthMM;

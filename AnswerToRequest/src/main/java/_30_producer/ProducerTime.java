@@ -7,19 +7,21 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-public class ProducerTime {
+public class ProducerTime extends Producer{
 
     private Duration programmingTimeH;
     private LocalDateTime availableStart;
     private LocalDateTime availableFinish;
     private Duration deliveringTimeH;
+    private long processingSpeedCM3pH;
 
     //for manual data input
-    public ProducerTime(String programmingTimeH, String availableStart, String availableFinish, String deliveringTimeH) {
+    public ProducerTime(String programmingTimeH, String availableStart, String availableFinish, String deliveringTimeH, String processingSpeedCM3pH) {
         this.programmingTimeH = Duration.ofHours(Long.parseLong(programmingTimeH));
         this.availableStart = LocalDateTime.of(LocalDate.parse(availableStart), LocalTime.MIDNIGHT);
         this.availableFinish = LocalDateTime.of(LocalDate.parse(availableFinish), LocalTime.MIDNIGHT);
         this.deliveringTimeH = Duration.ofHours(Long.parseLong(deliveringTimeH));
+        this.processingSpeedCM3pH = Long.valueOf(processingSpeedCM3pH);
 
     /*
         //for calculations
@@ -63,6 +65,14 @@ public class ProducerTime {
 
     public void setDeliveringTimeH(Duration deliveringTimeH) {
         this.deliveringTimeH = deliveringTimeH;
+    }
+
+    public long getProcessingSpeedCM3pH() {
+        return processingSpeedCM3pH;
+    }
+
+    public void setProcessingSpeedCM3pH(long processingSpeedCM3pH) {
+        this.processingSpeedCM3pH = processingSpeedCM3pH;
     }
 }
 

@@ -1,5 +1,14 @@
 package _60_proposal;
 
-public class ProposalScope  {
+import _30_producer.Producer;
+import _50_request.Request;
 
+public class ProposalScope  extends Proposal {
+
+
+    @Override
+    public void makeProposal(Request request, Producer producer) {
+
+
+    }
 }

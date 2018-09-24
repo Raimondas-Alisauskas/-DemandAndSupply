@@ -8,11 +8,12 @@ import java.util.List;
 public class Producer {
 
     private String producerId ;
-    private ProducerScope producerScope;
-    private ProducerTime producerTime;
 
+    public Producer() {
+        this.producerId = new IdGenerator().generateIdKey("Prd ");
+    }
 
-    //for calculations
+/*    //for calculations
     public Producer(int i, DASData<Producer> producersData) {
         this.producerId = new IdGenerator().generateIdKey("Prd ");
         this.producerScope = producersData.getData().get(i).getProducerScope();
@@ -30,7 +31,7 @@ public class Producer {
         this.producerId = new IdGenerator().generateIdKey("Prd ");
         this.producerScope = producerScope;
         this.producerTime = producerTime;
-    }
+    }*/
 
 
 //    public Producer( String producerId, ProducerScope producerScope, ProducerTime producerTime) {
@@ -47,21 +48,21 @@ public class Producer {
         this.producerId = producerId;
     }
 
-    public ProducerScope getProducerScope() {
-        return producerScope;
-    }
-
-    public void setProducerScope(ProducerScope producerScope) {
-        this.producerScope = producerScope;
-    }
-
-    public ProducerTime getProducerTime() {
-        return producerTime;
-    }
-
-    public void setProducerTime(ProducerTime producerTime) {
-        this.producerTime = producerTime;
-    }
+//    public ProducerScope getProducerScope() {
+//        return producerScope;
+//    }
+//
+//    public void setProducerScope(ProducerScope producerScope) {
+//        this.producerScope = producerScope;
+//    }
+//
+//    public ProducerTime getProducerTime() {
+//        return producerTime;
+//    }
+//
+//    public void setProducerTime(ProducerTime producerTime) {
+//        this.producerTime = producerTime;
+//    }
 }
 
 // TODO: Stage2

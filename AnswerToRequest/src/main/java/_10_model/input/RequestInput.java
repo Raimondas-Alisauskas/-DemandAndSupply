@@ -22,6 +22,15 @@ public class RequestInput {
         deadline = "2018-09-15";
     }
 
+    public RequestInput(String clientId, String maxHeightMM, String maxLengthMM, String maxWidthMM, String volumeCM3, String deadline) {
+        this.clientId = clientId;
+        this.maxHeightMM = maxHeightMM;
+        this.maxLengthMM = maxLengthMM;
+        this.maxWidthMM = maxWidthMM;
+        this.volumeCM3 = volumeCM3;
+        this.deadline = deadline;
+    }
+
     //getset
 
     public String getClientId() {

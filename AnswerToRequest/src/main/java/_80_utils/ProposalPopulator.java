@@ -1,17 +1,20 @@
 package _80_utils;
 
 import _30_producer.Producer;
+import _30_producer.ProducerTime;
 import _50_request.Request;
 import _60_proposal.Proposal;
+import _60_proposal.ProposalTime;
 
 public class ProposalPopulator {
 
-    public Proposal fillProposal(Proposal proposal, Request request, Producer producer) {
+    public ProposalTime fillProposal(ProposalTime proposal, Request request, ProducerTime producer) {
         proposal.setRequestId(request.getRequestId());
         proposal.setProducerId(producer.getProducerId());
-        proposal.getProposalTime().setAvailableStart(producer.getProducerTime().getAvailableStart());
-        proposal.getProposalTime().setAvailableFinish(producer.getProducerTime().getAvailableFinish());
+        proposal.setAvailableStart(producer.getAvailableStart());
+        proposal.setAvailableFinish(producer.getAvailableFinish());
         return proposal;
+
     }
 
 }

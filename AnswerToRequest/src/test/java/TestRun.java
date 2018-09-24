@@ -31,31 +31,31 @@ public class TestRun {
             System.out.println("Request:" );
             Request request = requestData.getData().get(i);
             printVariables(request);
-            RequestScope requestScope = requestData.getData().get(i).getRequestScope();
-            printVariables(requestScope);
-            RequestTime requestTime = requestData.getData().get(i).getRequestTime();
-            printVariables(requestTime);
-        }
-
-        List<Proposal> proposalsInAnswer = answersData.getData().get(0).getProposalsInAnswer();
-        for (int i = 0; i < proposalsInAnswer.size(); i++) {
-            System.out.println();
-            System.out.println("Proposal " + (i + 1) +" in Answer:" );
-            Proposal proposal = proposalsInAnswer.get(i);
-            printVariables(proposal);
-            ProposalTime proposalTime = proposalsInAnswer.get(i).getProposalTime();
-            printVariables(proposalTime);
-
-            System.out.println();
-            System.out.println("Producer in Proposal " + (i + 1) + ":" );
-            String producerId = proposalsInAnswer.get(i).getProducerId();
-            int index = 1 + producersData.getData().indexOf(producerId);
-            Producer producer = producersData.getData().get(index);
-            printVariables(producer);
-            ProducerScope producerScope = producersData.getData().get(index).getProducerScope();
-            printVariables(producerScope);
-            ProducerTime producerTime = producersData.getData().get(index).getProducerTime();
-            printVariables(producerTime);
+//            RequestScope requestScope = requestData.getData().get(i).getRequestScope();
+//            printVariables(requestScope);
+//            RequestTime requestTime = requestData.getData().get(i).getRequestTime();
+//            printVariables(requestTime);
+//        }
+//
+//        List<Proposal> proposalsInAnswer = answersData.getData().get(0).getProposalsInAnswer();
+//        for (int i = 0; i < proposalsInAnswer.size(); i++) {
+//            System.out.println();
+//            System.out.println("Proposal " + (i + 1) +" in Answer:" );
+//            Proposal proposal = proposalsInAnswer.get(i);
+//            printVariables(proposal);
+//            ProposalTime proposalTime = proposalsInAnswer.get(i).getProposalTime();
+//            printVariables(proposalTime);
+//
+//            System.out.println();
+//            System.out.println("Producer in Proposal " + (i + 1) + ":" );
+//            String producerId = proposalsInAnswer.get(i).getProducerId();
+//            int index = 1 + producersData.getData().indexOf(producerId);
+//            Producer producer = producersData.getData().get(index);
+//            printVariables(producer);
+//            ProducerScope producerScope = producersData.getData().get(index).getProducerScope();
+//            printVariables(producerScope);
+//            ProducerTime producerTime = producersData.getData().get(index).getProducerTime();
+//            printVariables(producerTime);
 
         }
 

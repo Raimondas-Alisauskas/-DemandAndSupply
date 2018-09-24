@@ -1,32 +1,25 @@
 package _60_proposal;
 
+import _30_producer.Producer;
+import _50_request.Request;
 import _80_utils.IdGenerator;
 
-public class Proposal {
+import java.util.List;
+
+public abstract class Proposal {
 
 
     private String proposalId;
     private String requestId;
     private String producerId;
-    private ProposalScope proposalScope;
-    private ProposalTime proposalTime;
 
-    //empty Proposal
     public Proposal() {
         this.proposalId =  new IdGenerator().generateIdKey("Prp ");
-        this.proposalScope = new ProposalScope();
-        this.proposalTime = new ProposalTime();
-
     }
 
+    public abstract void makeProposal(Request request, Producer producer);
 
-//    public Proposal(String requestId, String producerId, ProposalScope proposalScope, ProposalTime proposalTime) {
-//        this.proposalId = new IdGenerator().generateIdKey("Pr ");
-//        this.requestId = requestId;
-//        this.producerId = producerId;
-//        this.proposalScope = proposalScope;
-//        this.proposalTime = proposalTime;
-//    }
+
 
     public String getProposalId() {
         return proposalId;
@@ -52,19 +45,10 @@ public class Proposal {
         this.producerId = producerId;
     }
 
-    public ProposalScope getProposalScope() {
-        return proposalScope;
-    }
-
-    public void setProposalScope(ProposalScope proposalScope) {
-        this.proposalScope = proposalScope;
-    }
-
-    public ProposalTime getProposalTime() {
-        return proposalTime;
-    }
-
-    public void setProposalTime(ProposalTime proposalTime) {
-        this.proposalTime = proposalTime;
-    }
 }
+// TODO: Stage2
+// list of dates for availableTime;
+//    //price
+//    private double proposalPrice;
+//    //score
+//    private int score;

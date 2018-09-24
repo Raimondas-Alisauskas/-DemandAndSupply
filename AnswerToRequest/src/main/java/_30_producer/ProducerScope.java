@@ -1,19 +1,19 @@
 package _30_producer;
 
-public class ProducerScope {
+public class ProducerScope extends Producer{
 
 
     private long maxHeightMM;
     private long maxLengthMM;
     private long maxWidthMM;
-    private long processingSpeedCM3pH;
+
 
     //for manual data input
-    public ProducerScope(String maxHeightMM, String maxLengthMM, String maxWidthMM, String processingSpeedCM3pH) {
+    public ProducerScope(String maxHeightMM, String maxLengthMM, String maxWidthMM) {
         this.maxHeightMM = Long.valueOf(maxHeightMM);
         this.maxLengthMM = Long.valueOf(maxLengthMM);
         this.maxWidthMM = Long.valueOf(maxWidthMM);
-        this.processingSpeedCM3pH = Long.valueOf(processingSpeedCM3pH);
+
     }
 
 
@@ -51,11 +51,5 @@ public class ProducerScope {
         this.maxWidthMM = maxWidthMM;
     }
 
-    public long getProcessingSpeedCM3pH() {
-        return processingSpeedCM3pH;
-    }
 
-    public void setProcessingSpeedCM3pH(long processingSpeedCM3pH) {
-        this.processingSpeedCM3pH = processingSpeedCM3pH;
-    }
 }

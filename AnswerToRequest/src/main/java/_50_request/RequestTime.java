@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-public class RequestTime {
+public class RequestTime extends Request{
 
     private long volumeCM3;
     private LocalDateTime deadline;

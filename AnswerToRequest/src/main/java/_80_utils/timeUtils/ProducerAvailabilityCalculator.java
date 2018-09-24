@@ -1,6 +1,7 @@
 package _80_utils.timeUtils;
 
 import _30_producer.Producer;
+import _30_producer.ProducerTime;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -8,10 +9,10 @@ import java.time.LocalDateTime;
 public class ProducerAvailabilityCalculator {
 
     // availability evaluated for 24/7 ProducerTime's worktime
-    public boolean calculateProducerAvailability(Producer producer, Duration productionDuration) {
+    public boolean calculateProducerAvailability(ProducerTime producer, Duration productionDuration) {
 
-        LocalDateTime availableStart = producer.getProducerTime().getAvailableStart();
-        LocalDateTime availableFinish = producer.getProducerTime().getAvailableFinish();
+        LocalDateTime availableStart = producer.getAvailableStart();
+        LocalDateTime availableFinish = producer.getAvailableFinish();
 
         return availableStart.plus(productionDuration).isBefore(availableFinish);
     }
