@@ -9,6 +9,9 @@ public class RequestTime extends Request{
     private long volumeCM3;
     private LocalDateTime deadline;
 
+    public RequestTime() {
+    }
+
     public RequestTime(long volumeCM3, LocalDateTime deadline) {
         this.volumeCM3 = volumeCM3;
         this.deadline = deadline;

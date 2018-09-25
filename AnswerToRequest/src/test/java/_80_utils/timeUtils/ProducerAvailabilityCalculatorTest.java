@@ -14,7 +14,7 @@ public class ProducerAvailabilityCalculatorTest {
         ProducerAvailabilityCalculator producerAvailabilityCalculator = new ProducerAvailabilityCalculator();
 
         ProducerTime producerTime = new ProducerTime( "2", "2018-09-01",
-                "2018-09-02","2", "2");
+                "2018-09-02","2", "0");
         Duration productionDuration1 = Duration.ofHours(23L);
         Duration productionDuration2 = Duration.ofHours(24L);
 

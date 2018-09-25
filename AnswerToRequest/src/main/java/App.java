@@ -5,13 +5,13 @@ import _10_model.data.RequestsDBFactory;
 import _10_model.input.RequestInput;
 import _30_producer.Producer;
 import _50_request.Request;
-import _50_request.RequestScope;
 import _50_request.RequestScopeTime;
+import _50_request.RequestTime;
 import _60_proposal.Proposal;
 import _70_answer.Answer;
 import _80_utils.RequestPopulator;
 import _80_utils.scopeUtils.ProposalScopeEvaluator;
-import _80_utils.timeUtils.ProposalTimeEvaluator;
+import _70_answer.AnswerTime;
 
 
 import java.util.List;
@@ -43,32 +43,31 @@ class App {
         //Receiving Request for production: Create RequestInput
         RequestInput requestInput = new RequestInput();
 
-        //Create empty Request
-        RequestScopeTime request = new RequestScopeTime();
+//        //Create empty Request
+//        RequestTime request = new RequestTime();
 
         //fill the Request
         RequestPopulator requestPopulator = new RequestPopulator();
-        request = null;
-//                requestPopulator.fillRequest(requestInput, request);
+        RequestTime request = requestPopulator.fillTimeRequest(requestInput);
 
         //Put the Request in to requestsData
         requestsData.getData().add(request);
 
-        //Get scopeFitProposals
-        ProposalScopeEvaluator proposalScopeEvaluator = new ProposalScopeEvaluator();
-        List<Producer> scopeFitProducers = proposalScopeEvaluator.getScopeFitProducers(request, producersData);
+//        //Get scopeFitProposals
+//        ProposalScopeEvaluator proposalScopeEvaluator = new ProposalScopeEvaluator();
+//        List<Producer> scopeFitProducers = proposalScopeEvaluator.getScopeFitProducers(request, producersData);
 
 
-//        //Get timeFitProposals list which meets Request's time requirements
-//        ProposalTimeEvaluator proposalTimeEvaluator = new ProposalTimeEvaluator();
-//        List<Proposal> timeFitProposals = proposalTimeEvaluator.getTimeFitProposalsList(request, scopeFitProducers);
-//
+        //Get timeFitProposals list which meets Request's time requirements
+        AnswerTime answerTime = new AnswerTime(request, (List<Producer>) producersData);
+//        List<Proposal> timeFitProposals = answerTime.makeListOfProposals(request, scopeFitProducers);
+
 //        //Put timeFitProposals to Answer
 //        Answer answer = new Answer();
 //        answer.setProposalsInAnswer(timeFitProposals);
-//
-//        //Put Answer to AnswersData
-//        answersData.getData().add(answer);
+
+        //Put Answer to AnswersData
+        answersData.getData().add(answerTime);
 
 
     }

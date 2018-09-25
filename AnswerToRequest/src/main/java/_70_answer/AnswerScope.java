@@ -9,11 +9,10 @@ import _80_utils.scopeUtils.ProposalScopeEvaluator;
 import java.util.List;
 
 public class AnswerScope extends Answer {
-    @Override
-    public List<Proposal> makeListOfProposals(Request request, DASData<Producer> producersList) {
-        ProposalScopeEvaluator scopeEvaluator = new ProposalScopeEvaluator();
 
+
+    @Override
+    public List<Proposal> getProposalsList() {
         return null;
-//                scopeEvaluator.getScopeFitProducers(request, producersList);
     }
 }

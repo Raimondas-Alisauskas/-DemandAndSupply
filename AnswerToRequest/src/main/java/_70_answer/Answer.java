@@ -11,16 +11,7 @@ import java.util.List;
 public abstract class Answer {
 
     private String answerId = new IdGenerator().generateIdKey("Ans ");
-    private List<Proposal> ProposalsInAnswer;
 
-    public abstract List<Proposal> makeListOfProposals(Request request, DASData<Producer> producersList);
+    public abstract List<Proposal> getProposalsList();
 
-
-    public List<Proposal> getProposalsInAnswer() {
-        return ProposalsInAnswer;
-    }
-
-    public void setProposalsInAnswer(List<Proposal> proposalsInAnswer) {
-        this.ProposalsInAnswer = proposalsInAnswer;
-    }
 }

@@ -21,10 +21,10 @@ public class TestRun {
         App app = new App(requestData, producersData, answersData);
         app.runApp();
 
-        for (int i = 0; i < requestData.getData().size(); i++) {
-            System.out.println("Request:" );
-            Request request = requestData.getData().get(i);
-            printVariables(request);
+//        for (int i = 0; i < requestData.getData().size(); i++) {
+//            System.out.println("Request:" );
+//            Request request = requestData.getData().get(i);
+//            printVariables(request);
 //            RequestScope requestScope = requestData.getData().get(i).getRequestScope();
 //            printVariables(requestScope);
 //            RequestTime requestTime = requestData.getData().get(i).getRequestTime();
@@ -51,7 +51,7 @@ public class TestRun {
 //            ProducerTime producerTime = producersData.getData().get(index).getProducerTime();
 //            printVariables(producerTime);
 
-        }
+//        }
 
     }
 
