@@ -14,6 +14,12 @@ public class RequestTime extends Request{
         this.deadline = deadline;
     }
 
+    //manual input
+    public RequestTime(String volumeCM3, String deadline) {
+        this.volumeCM3 = Long.valueOf(volumeCM3);
+        this.deadline = (LocalDateTime.of(LocalDate.parse(deadline), LocalTime.MIDNIGHT));
+
+    }
 
     public long getVolumeCM3() {
         return volumeCM3;

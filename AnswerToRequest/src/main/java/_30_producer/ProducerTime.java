@@ -1,7 +1,5 @@
 package _30_producer;
 
-import _10_model.data.DASData;
-
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;

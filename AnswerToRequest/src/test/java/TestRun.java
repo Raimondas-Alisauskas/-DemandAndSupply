@@ -1,17 +1,11 @@
 
 import _10_model.data.*;
 import _30_producer.Producer;
-import _30_producer.ProducerScope;
 import _30_producer.ProducerTime;
 import _50_request.Request;
-import _50_request.RequestScope;
-import _50_request.RequestTime;
-import _60_proposal.Proposal;
-import _60_proposal.ProposalTime;
 import _70_answer.Answer;
 
 import java.lang.reflect.Field;
-import java.util.List;
 
 public class TestRun {
 

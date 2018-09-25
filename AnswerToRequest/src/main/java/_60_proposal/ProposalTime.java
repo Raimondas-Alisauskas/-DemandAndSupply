@@ -14,17 +14,17 @@ import java.time.LocalDateTime;
 public class ProposalTime extends Proposal {
 
 
-    //Producer data
-    private Duration programmingTimeH;
-    private LocalDateTime availableStart;
-    private LocalDateTime availableFinish;
-    private Duration deliveringTimeH;
+//    //Producer data
+//    private Duration programmingTimeH;
+//    private LocalDateTime availableStart;
+//    private LocalDateTime availableFinish;
+//    private Duration deliveringTimeH;
+//
+//    // Request data
+//    private long volumeCM3;
+//    private LocalDateTime deadline;
 
-    // Request data
-    private long volumeCM3;
-    private LocalDateTime deadline;
-
-    //Input
+    //Inputs
     private ProducerTime producerTime;
     private RequestTime requestTime;
 
@@ -34,10 +34,6 @@ public class ProposalTime extends Proposal {
     private boolean producerIsAvailable;
     private boolean productionIsOnTime;
 
-    //TimeUtils
-    private ProductionDurationCalculator productionDurationCalculator;
-    private EarlyFinishDateCalculator earlyFinishDateCalculator;
-    private ProducerAvailabilityCalculator producerAvailabilityCalculator;
 
     public ProposalTime() {
     }
@@ -58,17 +54,21 @@ public class ProposalTime extends Proposal {
 
     private void checkProducerTimeAvailability() {
         // calculate productionDuration
-        productionDurationCalculator = new ProductionDurationCalculator();// TODO: 18.9.24 ?
+        ProductionDurationCalculator productionDurationCalculator;
+        productionDurationCalculator = new ProductionDurationCalculator();
         productionDuration = productionDurationCalculator.calcProductionDuration(requestTime, producerTime);
 
         // calculate availability
+        ProducerAvailabilityCalculator producerAvailabilityCalculator;
+        producerAvailabilityCalculator = new ProducerAvailabilityCalculator();
         producerIsAvailable = producerAvailabilityCalculator.calculateProducerAvailability(producerTime, productionDuration);
     }
 
     private void checkProductionIsOnTime() {
 
         //calculate earlyFinishDate date of ProposalTime
-//        earlyFinishDateCalculator = new EarlyFinishDateCalculator();// TODO: 18.9.24  ?
+        EarlyFinishDateCalculator earlyFinishDateCalculator;
+        earlyFinishDateCalculator = new EarlyFinishDateCalculator();
         earlyFinishDate = earlyFinishDateCalculator.calculateEarlyFinish(producerTime, productionDuration);
 
         //check Request's deadline
@@ -127,75 +127,52 @@ public class ProposalTime extends Proposal {
         this.productionIsOnTime = productionIsOnTime;
     }
 
-    public ProductionDurationCalculator getProductionDurationCalculator() {
-        return productionDurationCalculator;
-    }
 
-    public void setProductionDurationCalculator(ProductionDurationCalculator productionDurationCalculator) {
-        this.productionDurationCalculator = productionDurationCalculator;
-    }
-
-    public EarlyFinishDateCalculator getEarlyFinishDateCalculator() {
-        return earlyFinishDateCalculator;
-    }
-
-    public void setEarlyFinishDateCalculator(EarlyFinishDateCalculator earlyFinishDateCalculator) {
-        this.earlyFinishDateCalculator = earlyFinishDateCalculator;
-    }
-
-    public ProducerAvailabilityCalculator getProducerAvailabilityCalculator() {
-        return producerAvailabilityCalculator;
-    }
-
-    public void setProducerAvailabilityCalculator(ProducerAvailabilityCalculator producerAvailabilityCalculator) {
-        this.producerAvailabilityCalculator = producerAvailabilityCalculator;
-    }
-
-    public Duration getProgrammingTimeH() {
-        return programmingTimeH;
-    }
-
-    public void setProgrammingTimeH(Duration programmingTimeH) {
-        this.programmingTimeH = programmingTimeH;
-    }
-
-    public LocalDateTime getAvailableStart() {
-        return availableStart;
-    }
-
-    public void setAvailableStart(LocalDateTime availableStart) {
-        this.availableStart = availableStart;
-    }
-
-    public LocalDateTime getAvailableFinish() {
-        return availableFinish;
-    }
-
-    public void setAvailableFinish(LocalDateTime availableFinish) {
-        this.availableFinish = availableFinish;
-    }
-
-    public Duration getDeliveringTimeH() {
-        return deliveringTimeH;
-    }
-
-    public void setDeliveringTimeH(Duration deliveringTimeH) {
-        this.deliveringTimeH = deliveringTimeH;
-    }
-
-    public long getVolumeCM3() {
-        return volumeCM3;
-    }
-
-    public void setVolumeCM3(long volumeCM3) {
-        this.volumeCM3 = volumeCM3;
-    }
-
-    public LocalDateTime getDeadline() {
-        return deadline;
-    }
-
-    public void setDeadline(LocalDateTime deadline) {
-        this.deadline = deadline;
-    }
+//    public Duration getProgrammingTimeH() {
+//        return programmingTimeH;
+//    }
+//
+//    public void setProgrammingTimeH(Duration programmingTimeH) {
+//        this.programmingTimeH = programmingTimeH;
+//    }
+//
+//    public LocalDateTime getAvailableStart() {
+//        return availableStart;
+//    }
+//
+//    public void setAvailableStart(LocalDateTime availableStart) {
+//        this.availableStart = availableStart;
+//    }
+//
+//    public LocalDateTime getAvailableFinish() {
+//        return availableFinish;
+//    }
+//
+//    public void setAvailableFinish(LocalDateTime availableFinish) {
+//        this.availableFinish = availableFinish;
+//    }
+//
+//    public Duration getDeliveringTimeH() {
+//        return deliveringTimeH;
+//    }
+//
+//    public void setDeliveringTimeH(Duration deliveringTimeH) {
+//        this.deliveringTimeH = deliveringTimeH;
+//    }
+//
+//    public long getVolumeCM3() {
+//        return volumeCM3;
+//    }
+//
+//    public void setVolumeCM3(long volumeCM3) {
+//        this.volumeCM3 = volumeCM3;
+//    }
+//
+//    public LocalDateTime getDeadline() {
+//        return deadline;
+//    }
+//
+//    public void setDeadline(LocalDateTime deadline) {
+//        this.deadline = deadline;
+//    }
 }

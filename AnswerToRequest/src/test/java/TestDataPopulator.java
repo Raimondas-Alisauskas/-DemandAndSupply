@@ -3,7 +3,6 @@ package test.java;
 import _10_model.data.DASData;
 import _10_model.data.ProducersDBFactory;
 import _30_producer.Producer;
-import _30_producer.ProducerScope;
 import _30_producer.ProducerTime;
 
 
